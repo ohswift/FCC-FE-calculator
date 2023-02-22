@@ -1,84 +1,102 @@
-$padWidth: 100px;
-$padHeight: 80px;
+$buttonWidth: 60px;
+$buttonHeight: 60px;
+$lightColor: #a5a5a5;
+$orangeColor: #ee9406;
+$darkColor: #323232;
+
 @import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap");
 
 body {
-  font-family: "Shantell Sans", cursive;
   box-sizing: border-box;
-  font-size: 30px;
-}
-
-body {
-  user-select: none;
   background-color: #74b9ff;
+  user-select: none;
   color: white;
 }
 
 #root {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.inner-container {
+.container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  // width: 660px;
+  width: $buttonWidth * 4 + 5 * 10;
   text-align: center;
-  background-color: white;
-  border-radius: 5px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
 
-  .pad-bank {
-    width: $padWidth * 3 + 32;
-    height: $padHeight * 3 + 32;
+  .display {
+    width: 100%;
+    text-align: right;
+    font-size: 30px;
+    padding: 0px 0px 5px 5px;
+  }
+
+  .expression {
+    font-size: 15px;
+    color: $orangeColor;
+    width: 100%;
+    padding: 1px;
+    margin: 0px;
+    text-align: right;
+    min-height: 20px;
+  }
+
+  .button-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
-    .drum-pad {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: $padWidth;
-      height: $padHeight;
-      background-color: #74b9ff;
-      box-shadow: 3px 3px 5px black;
-      margin-right: 10px;
-      margin-top: 10;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .drum-pad.actived {
-      opacity: 0.6;
-      transform: scale(0.9);
-    }
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-  .controls-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // margin: 20px 20px 0 10px;
-    vertical-align: top;
+  .button-container.left {
+    width: 75%;
+  }
+  .button-container.right {
+    width: 25%;
+  }
 
-    .control {
-      width: 100px;
-      margin: auto;
-      p {
-        margin-bottom: 0;
-      }
-    }
-    #display {
-      width: 200px;
-      background-color: #74b9ff;
-      margin: 15px auto;
-      padding: 15px;
-      box-sizing: border-box;
-    }
+  button {
+    width: $buttonWidth;
+    height: $buttonHeight;
+    margin: 5px;
+    border-radius: $buttonHeight/2.0;
+    border: none;
+    font-size: 30px;
+  }
+
+  button:active {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .big {
+    width: $buttonWidth * 2+10;
+  }
+  .dark {
+    background-color: $darkColor;
+    color: white;
+  }
+  .light {
+    background-color: $lightColor;
+    color: black;
+  }
+  .orange {
+    background-color: $orangeColor;
+    color: white;
+  }
+
+  .clear {
+    width: $buttonWidth * 3+20;
   }
 }
 
